@@ -1,1 +1,1 @@
-web:gunicorn moringa_hub.wsgi
+web: gunicorn moringa_hub.wsgi
