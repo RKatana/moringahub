@@ -1,0 +1,34 @@
+nav.style,.bg{
+    background-color: #626a34;
+
+}
+.card{
+    border: solid #626a34 2px;
+}
+.help_text{
+    display:none;
+}
+.home{
+    background-image: url('../images/mobg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+.login{
+    background-image: url('../images/code.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 650px;
+}
+.prof{
+    color: #626a34;
+ 
+}
+.nav1{
+    position:sticky;
+    top:60px;
+}
+.right.rg{
+    display:flex;
+    float:right
+}

@@ -1,0 +1,40 @@
+{% extends 'registration/base.html'%}
+{%load static%}
+{% load bootstrap4%}
+{% block content%}
+<nav class="navbar container-fluid navbar-expand-lg  navbar-dark  pt-3 sticky-top d-flex justify-content-center" >   
+    <div class="col-md-3 "></div>
+    <li class="list-unstyled font-weight-bold ">
+        <a class="navbar-brand  nav-link" href="">MoringaHub</a>
+    </li>
+    <li class="list-unstyled  pl-auto ">
+        <a class="navbar-brand  nav-link" href="/">Sign in</a>
+    </li>
+    <div class="col-md-3"></div>
+  </nav>
+<div class="container-fluid " data-parallax="scroll" data-image-src="../../static/images/cmp.png">
+  <div class="row pb-2 pt-5 ">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <div class="card shadow-sm mb-md-5">
+         <h3 class="card-header text-center text-white bg">Sign Up</h3>
+      {% if form.errors %}
+      <p> Ensure you entered the right info </p>
+      {% endif %}
+      <div class="card-body">
+        <form  action="/accounts/register/?next=/main/" method="post" >
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <div class=" card-footer form-group form-inline pb-0">
+              <p><input type="submit" class="btn bg btn-md text-white" value="Sign Up"></p>
+              <!-- <p class="pl-3"> <a class="btn bg btn-sm text-white" href="/">Sign In</a></p> -->
+          </div>
+          <input type="hidden" name="next" value="/">
+        </form>
+      </div>  
+      </div>               
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+{%endblock%}

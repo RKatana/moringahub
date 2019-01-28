@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block content%}
+<div class="container-fluid home "> 
+
+  <div class="" >
+    <div class="text-white pt-5 pl-md-5">
+      <h2>Every Idea is a great idea! <br>Sometimes it may only need a review.</h2>
+      <h3>Think of it, do it. And we store it all for you!</h3>
+    </div> <br> <br> <br>
+      <form class="d-flex justify-content-center" action="{%url 'search'%} ">
+        <div >
+          <label for="search" class="text-success">Search projects by class</label>
+          <input class="form-control form-control-lg" id='search' name="projects" type="text" placeholder="Name of class e.g MC13">         
+        </div>
+      </form>   
+  </div>
+</div>
+<br><br>
+<div class="container-fluid jumbotron">
+  {% if projects%}
+  <h3 class="text-center">Moringa school projects.</h3>
+  {%else%}
+  <h3>No projects</h3>
+  {%endif%}
+  <div class="row">
+    {% for project in projects%}
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>{{project.title}} </h3>
+        </div>
+        <div class="card-body">
+          <p> {{project.description}}</p>
+        </div>
+        <div class="card-link">
+          <a href="{{project.website_link}} ">{{project.website_link}}</a>
+        </div>
+      </div> <br>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+{%endblock%}

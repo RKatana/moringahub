@@ -1,0 +1,39 @@
+{%extends 'registration/base.html'%}
+{%load bootstrap4%}
+{% block content%}
+<nav class="navbar container-fluid navbar-expand-lg  navbar-dark  pt-3 sticky-top d-flex justify-content-center" >   
+    <div class="col-md-3 "></div>
+    <li class="list-unstyled font-weight-bold ">
+        <a class="navbar-brand  nav-link" href="">MoringaHub</a>
+    </li>
+    <li class="list-unstyled  pl-auto ">
+        <a class="navbar-brand  nav-link" href="/accounts/register/">Sign up</a>
+    </li>
+    <div class="col-md-3"></div>
+  </nav>
+<div class="container-fluid login">
+  <div class="row pt-sm-3 pt-md-5 ">
+    <div class="col-md-4"></div>
+    <div class="card ">
+      <div class="card-header bg text-white">
+          <h3 class="text-center">Please Sign in to continue</h3>
+      </div>
+      <div class="card-body bg-light">
+          <form action="/" method="POST">
+              {% csrf_token%}
+              {% bootstrap_form form%}
+              <div class="card-footer">
+                  <div class="form-group form-inline ">
+                      <p class="text-white"> <input type="submit" class="btn bg btn-md text-white" value="Log in"></p>
+                      <!-- <p class="pl-3 text-white"><a class = "btn bg btn-sm text-white" href="/accounts/register/">Sign Up </a></p> -->
+                   </div>
+                   <input type="hidden" name="next" value="/main/home">
+                   
+               </div>
+          </form>
+      </div>
+  </div>
+  <div class="col-md-3"></div>
+  </div>
+</div>
+{%endblock%}

@@ -1,0 +1,48 @@
+<nav class="navbar style container-fluid navbar-expand-lg   navbar-dark  pt-3 sticky-top" >
+    <a class="navbar-brand " class='pr-sm-1' href="#">
+        <img class="bg-white logo" src="../../static/images/logo.png" width="80px" height="" alt="">
+    </a>
+        <li class="list-unstyled font-weight-bold pl-sm-1 ">
+            <a class="navbar-brand  nav-link" href="{% url 'home'%} ">MoringaHub</a>
+        </li>
+     <div class="container "> 
+       <div class="row">
+         
+        <div class="col-md-6 right pl-sm-1">
+    {% if user.is_authenticated%}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse right" id="navbarSupportedContent">
+        <ul class="navbar-nav rg">
+          <li class="nav-item active">
+            <a class="nav-link navbar-brand" href="{%url 'home'%} ">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active navbar-brand" href="{% url 'post_projects'%} ">Projects</a>
+          </li>
+          
+          <li class="nav-item dropdown ">
+            <a class="nav-link  dropdown-toggle navbar-brand active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{user.username}}
+            </a>
+            <div class="dropdown-menu col-sm-3" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item prof" href="{%url 'profile'%} ">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item prof" href="{% url 'projects'%} ">My Projects</a>
+              
+              <input type="hidden" name="next" value="">
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  navbar-brand active" href="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+      
+      {%endif%}
+      </div>
+      </div>
+    
+    </nav>
