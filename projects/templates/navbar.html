@@ -9,10 +9,10 @@
       <div class="collapse navbar-collapse right  " id="navbarSupportedContent">
         <ul class="navbar-nav rg ml-auto">
             <li class="nav-item active font-weight-bold pr-none">
-                <a class="navbar-brand  nav-link " href="{% url 'home'%} ">MoringaHub</a>
+                <a class="navbar-brand  nav-link " href="{% url 'home'%} " title="Home page">MoringaHub</a>
             </li>        
           <li class="nav-item">
-            <a class="nav-link active navbar-brand" href="{% url 'post_projects'%} ">Projects</a>
+            <a class="nav-link active navbar-brand" href="{% url 'post_projects'%} " title="Publish a project">Projects</a>
           </li>
           
           <li class="nav-item dropdown ">
@@ -22,8 +22,7 @@
             <div class="dropdown-menu col-sm-3" aria-labelledby="navbarDropdown">
               <a class="dropdown-item prof" href="{%url 'profile'%} ">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item prof" href="{% url 'projects'%} ">My Projects</a>
-              
+              <a class="dropdown-item prof" href="{% url 'projects'%} " title="Your public projects">My Projects</a>  
               <input type="hidden" name="next" value="">
             </div>
           </li>

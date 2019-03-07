@@ -28,16 +28,16 @@
             <div class="col-md-8">
               {% if ideas%}
               <h3>Raw drafted ideas</h3>
+              <a href="{%url 'drafts'%} " title="This idea will be private and only be visible to you"><h3>Add another idea.</h3></a>
               {%else%}
               <h3>No ideas in the drafts</h3>
-              <a href="{%url 'drafts'%} "><h3>Jot down an idea.</h3></a>
+              <a href="{%url 'drafts'%} " title="This idea will be private and only visible to you"><h3>Jot down an idea.</h3></a>
               {%endif%}
                 {% for idea in ideas%}
                 <p>Title: {{idea.title}} </p>
                 <p>Body: {{idea.raw_idea}} </p>
                 <p class="text-success">Drafted on: {{idea.pub_date}}  </p><hr> <br>
                 {%endfor%} 
-                <a href="{%url 'drafts'%} "><h3>Add another idea.</h3></a>
             </div>
             <div class="col-md-2"></div>
       
